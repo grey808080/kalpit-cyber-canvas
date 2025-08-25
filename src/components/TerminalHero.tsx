@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import hackerProfile from '@/assets/hacker-profile.jpg';
 
 const TerminalHero = () => {
   const [currentText, setCurrentText] = useState('');
@@ -32,69 +31,75 @@ const TerminalHero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden matrix-bg">
       <div className="container mx-auto px-4 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto text-center">
           
-          {/* Left side - Terminal content */}
-          <div className="space-y-8">
-            <div className="cyber-border p-6 bg-card/50 backdrop-blur-sm scan-line">
-              <div className="space-y-4">
-                <div className="terminal-prompt text-sm text-muted-foreground">
-                  kalpit@cybersec:~$ whoami
-                </div>
-                <h1 className="text-4xl lg:text-6xl font-bold terminal-text">
-                  {currentText}
-                  <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
-                    |
-                  </span>
-                </h1>
+          {/* Main terminal window */}
+          <div className="cyber-border p-8 lg:p-12 bg-card/50 backdrop-blur-sm scan-line">
+            <div className="space-y-8">
+              <div className="terminal-prompt text-sm text-muted-foreground text-left">
+                kalpit@cybersec:~$ whoami
+              </div>
+              
+              <h1 className="text-4xl lg:text-7xl font-bold terminal-text">
+                {currentText}
+                <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>
+                  |
+                </span>
+              </h1>
+              
+              <div className="space-y-4 text-left max-w-2xl mx-auto">
                 <div className="terminal-prompt text-sm text-muted-foreground">
                   kalpit@cybersec:~$ cat /about
                 </div>
-                <p className="text-lg text-muted-foreground">
-                  &gt; BSc. CSIT Student @ BMC, Bhaktapur
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  &gt; Passionate about <span className="text-accent">Web Development</span> & <span className="text-accent">Cybersecurity</span>
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  &gt; Location: Kathmandu, Nepal
-                </p>
+                <div className="space-y-2 text-lg">
+                  <p className="text-muted-foreground">
+                    &gt; BSc. CSIT Student @ BMC, Bhaktapur
+                  </p>
+                  <p className="text-muted-foreground">
+                    &gt; Passionate about <span className="text-accent">Web Development</span> & <span className="text-accent">Cybersecurity</span>
+                  </p>
+                  <p className="text-muted-foreground">
+                    &gt; Location: Kathmandu, Nepal
+                  </p>
+                  <p className="text-muted-foreground">
+                    &gt; Typing Speed: 50 WPM @ 96% accuracy
+                  </p>
+                </div>
+                
                 <div className="terminal-prompt text-sm text-muted-foreground">
                   kalpit@cybersec:~$ ./connect.sh
                 </div>
               </div>
             </div>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                variant="default" 
-                size="lg"
-                className="neon-glow hover:animate-pulse-glow transition-all duration-300"
-              >
-                Download Resume
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="cyber-border hover:bg-primary/10 transition-all duration-300"
-              >
-                View Projects
-              </Button>
-            </div>
           </div>
           
-          {/* Right side - Profile image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden cyber-border neon-glow">
-                <img 
-                  src={hackerProfile} 
-                  alt="Kalpit Dhakal - Cybersecurity & Web Development"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse-glow"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full animate-pulse-glow delay-1000"></div>
+          {/* Action buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <Button 
+              variant="default" 
+              size="lg"
+              className="neon-glow hover:animate-pulse-glow transition-all duration-300"
+            >
+              Download Resume
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="cyber-border hover:bg-primary/10 transition-all duration-300"
+            >
+              View Projects
+            </Button>
+          </div>
+          
+          {/* Status indicators */}
+          <div className="flex justify-center gap-8 mt-8">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+              <span className="text-sm font-mono text-muted-foreground">ONLINE</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 bg-accent rounded-full animate-pulse delay-500"></div>
+              <span className="text-sm font-mono text-muted-foreground">AVAILABLE</span>
             </div>
           </div>
           
