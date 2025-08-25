@@ -61,8 +61,8 @@ const SkillsMatrix = () => {
           <div className="terminal-prompt text-muted-foreground mb-4">
             kalpit@cybersec:~$ ls -la /skills/
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold terminal-text mb-6">
-            <span className="glitch-text" data-text="Skills Matrix">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+            <span className="glitch-text text-accent" data-text="Skills Matrix">
               Skills Matrix
             </span>
           </h2>
@@ -94,7 +94,7 @@ const SkillsMatrix = () => {
           {filteredSkills.map((skill, index) => (
             <Card 
               key={skill.name}
-              className="cyber-border bg-card/50 backdrop-blur-sm p-6 hover:neon-glow transition-all duration-500"
+              className="cyber-border bg-card/50 backdrop-blur-sm p-6 hover-glow hover-scan cursor-pointer"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="space-y-4">

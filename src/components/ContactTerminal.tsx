@@ -65,8 +65,8 @@ const ContactTerminal = () => {
           <div className="terminal-prompt text-muted-foreground mb-4">
             kalpit@cybersec:~$ ./initiate_connection.sh
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold terminal-text mb-6">
-            <span className="glitch-text" data-text="Establish Connection">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+            <span className="glitch-text text-accent" data-text="Establish Connection">
               Establish Connection
             </span>
           </h2>
@@ -78,7 +78,7 @@ const ContactTerminal = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           
           {/* Contact Form */}
-          <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8">
+          <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8 hover-glow">
             <div className="space-y-6">
               <div className="terminal-prompt text-muted-foreground">
                 kalpit@cybersec:~$ nano message.txt
@@ -147,7 +147,7 @@ const ContactTerminal = () => {
           <div className="space-y-8">
             
             {/* Social Links */}
-            <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8">
+            <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8 hover-glow">
               <div className="space-y-6">
                 <div className="terminal-prompt text-muted-foreground">
                   kalpit@cybersec:~$ cat /contact/social_links.json
@@ -160,7 +160,7 @@ const ContactTerminal = () => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-4 cyber-border bg-card/30 hover:neon-glow transition-all duration-300 group"
+                      className="flex items-center gap-4 p-4 cyber-border bg-card/30 hover-glow hover-scan transition-all duration-300 group"
                     >
                       <div className="p-2 bg-primary/20 rounded">
                         <link.icon size={20} className="text-primary group-hover:text-accent transition-colors" />
@@ -180,7 +180,7 @@ const ContactTerminal = () => {
             </Card>
 
             {/* Terminal Status */}
-            <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8">
+            <Card className="cyber-border bg-card/50 backdrop-blur-sm p-8 hover-glow">
               <div className="space-y-4">
                 <div className="terminal-prompt text-muted-foreground">
                   kalpit@cybersec:~$ status --current

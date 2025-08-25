@@ -82,8 +82,8 @@ const ProjectsSection = () => {
           <div className="terminal-prompt text-muted-foreground mb-4">
             kalpit@cybersec:~$ cd /projects && ls -la
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold terminal-text mb-6">
-            <span className="glitch-text" data-text="Projects">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+            <span className="glitch-text text-primary" data-text="Projects">
               Projects
             </span>
           </h2>
@@ -96,7 +96,7 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className="cyber-border bg-card/50 backdrop-blur-sm p-6 hover:neon-glow transition-all duration-500 group"
+              className="cyber-border bg-card/50 backdrop-blur-sm p-6 hover-lift hover-scan group cursor-pointer"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="space-y-6">

@@ -118,13 +118,13 @@
   }
   
   .glitch-text::before {
-    @apply text-red-500;
+    color: hsl(var(--warning-red));
     animation: glitch-1 0.5s infinite;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
   }
   
   .glitch-text::after {
-    @apply text-cyan-400;
+    color: hsl(var(--cyber-cyan));
     animation: glitch-2 0.5s infinite;
     clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
   }
@@ -192,6 +192,52 @@
 }
 
 @layer utilities {
+  /* Interactive hover effects */
+  .hover-glow {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 
+      0 0 8px hsl(var(--shadow-green) / 0.4),
+      0 0 20px hsl(var(--shadow-green) / 0.3),
+      0 0 35px hsl(var(--shadow-green) / 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 0 5px hsl(var(--shadow-green) / 0.3),
+      0 5px 15px hsl(var(--shadow-green) / 0.2);
+  }
+  
+  .hover-scan {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scan:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--cyber-cyan) / 0.1),
+      transparent
+    );
+    animation: scan-hover 0.8s ease-in-out;
+  }
+  
   /* Keyframe animations */
   @keyframes glitch {
     0%, 100% { transform: translate(0); }
@@ -199,6 +245,11 @@
     40% { transform: translate(-2px, -2px); }
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
+  }
+  
+  @keyframes scan-hover {
+    0% { left: -100%; }
+    100% { left: 100%; }
   }
   
   @keyframes glitch-1 {
