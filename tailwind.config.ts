@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Courier New', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,15 +55,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Custom hacker theme colors
+				terminal: {
+					green: 'hsl(var(--terminal-green))',
+					neon: 'hsl(var(--neon-green))',
+					cyan: 'hsl(var(--cyber-cyan))',
+					red: 'hsl(var(--warning-red))'
 				}
 			},
 			borderRadius: {
@@ -88,7 +88,18 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glitch': 'glitch 2s infinite',
+				'scan': 'scan 3s linear infinite',
+				'matrix-rain': 'matrix-rain 20s linear infinite',
+				'typing': 'typing 3s steps(20, end)',
+				'blink': 'blink 1s infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-terminal': 'var(--gradient-terminal)',
+				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-scan': 'var(--gradient-scan)'
 			}
 		}
 	},
